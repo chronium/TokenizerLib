@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TokenizerLib.Tokens {
     public class Token<T> where T: class {
@@ -44,20 +43,17 @@ namespace TokenizerLib.Tokens {
             return false;
         }
 
-        public static bool operator != (Token<T> a, Token<T> b) {
-            return !(a == b);
-        }
+        public static bool operator != (Token<T> a, Token<T> b) => !(a == b);
 
-        public static implicit operator Token<T> (T val) {
-            return new Token<T> (val);
-        }
+        public static implicit operator Token<T> (T val) =>
+            new Token<T> (val);
+        public static implicit operator T(Token<T> val) =>
+            val.Value[0];
 
-        public static implicit operator Token<T>((T val, int line, int column) val) {
-            return new Token<T> (val.val, val.line, val.column);
-        }
+        public static implicit operator Token<T>((T val, int line, int column) val) =>
+            new Token<T> (val.val, val.line, val.column);
 
-        public override int GetHashCode () {
-            return $"{this.Value.GetHashCode ()}--{this.Line}--{this.Column}".GetHashCode ();
-        }
+        public override int GetHashCode () =>
+            $"{this.Value.GetHashCode ()}--{this.Line}--{this.Column}".GetHashCode ();
     }
 }

@@ -43,9 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tokens\Char.cs" />
     <Compile Include="Tokens\EOF.cs" />
     <Compile Include="Tokens\Indent.cs" />
+    <Compile Include="Tokens\Number.cs" />
+    <Compile Include="Tokens\String.cs" />
     <Compile Include="Tokens\Token.cs" />
+    <Compile Include="Tokens\ValueToken.cs" />
     <Compile Include="Tokens\WhiteSpace.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
