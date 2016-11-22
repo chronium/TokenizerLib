@@ -7,13 +7,12 @@
             this.Val = val;
         }
 
-        public static implicit operator ValueToken<TVal>(TVal val) => 
+        public static implicit operator ValueToken<TVal> (TVal val) => 
             new ValueToken<TVal> (val);
-        public static implicit operator ValueToken<TVal>((TVal val, int line, int column) val) =>
+        public static implicit operator ValueToken<TVal> ((TVal val, int line, int column) val) =>
             new ValueToken<TVal> (val.val, val.line, val.column);
-        public static implicit operator TVal(ValueToken<TVal> val) => 
+        public static implicit operator TVal (ValueToken<TVal> val) => 
             val.Val;
-
 
         public override bool Equals (object obj) {
             if (obj == null)
@@ -42,5 +41,10 @@
 
         public override int GetHashCode () =>
             $"{this.Val.GetHashCode ()}--{this.Line}--{this.Column}".GetHashCode ();
+    }
+
+    public static class IntoValueToken {
+        public static ValueToken<T> Create<T> (T from) => new ValueToken<T> (from);
+        public static ValueToken<T> Into<T> (this T from) => Create (from);
     }
 }

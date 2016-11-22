@@ -6,33 +6,33 @@ namespace TokenizerLibTests {
     public class ValueTokenTests {
         [TestMethod]
         public void Char_Tok_Equal () =>
-            Assert.AreEqual<ValueToken<char>> (new Char ('a'), 'a');
+            Assert.AreEqual ('a'.Into (), 'a');
         [TestMethod]
         public void Char_Val_Equal () =>
-            Assert.AreEqual (new Char ('a').Val, 'a');
+            Assert.AreEqual ('a'.Into ().Val, 'a');
         [TestMethod]
         public void Val_Char_Equal () =>
-            Assert.AreEqual ('a', new Char ('a'));
+            Assert.AreEqual ('a', 'a'.Into ());
 
         [TestMethod]
         public void Int_Tok_Equal () =>
-            Assert.AreEqual<ValueToken<ulong>> (new Number (127), 127);
+            Assert.AreEqual (127.Into (), 127);
         [TestMethod]
         public void Int_Val_Equal () =>
-            Assert.AreEqual<ulong> (new Number (127).Val, 127);
+            Assert.AreEqual (127.Into ().Val, 127);
         [TestMethod]
         public void Val_Int_Equal () =>
-            Assert.AreEqual (127, new Number (127));
+            Assert.AreEqual (127, 127.Into ());
 
         [TestMethod]
         public void String_Tok_Equal () =>
-            Assert.AreEqual<ValueToken<string>> (new String ("test"), "test");
+            Assert.AreEqual ("test".Into (), "test");
         [TestMethod]
         public void String_Val_Equal () =>
-            Assert.AreEqual (new String ("test").Val, "test");
+            Assert.AreEqual ("test".Into ().Val, "test");
 
         [TestMethod]
         public void Val_String_Equal () =>
-            Assert.AreEqual ("test", new String ("test"));
+            Assert.AreEqual ("test", "test".Into ());
     }
 }
