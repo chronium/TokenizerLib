@@ -18,6 +18,10 @@
             if (obj == null)
                 return false;
 
+            if (Val.Equals(obj))
+                return true;
+
+
             if (!(obj is ValueToken<TVal>))
                 return false;
 

@@ -13,7 +13,7 @@ namespace TokenizerLibTests {
 
         [TestMethod]
         public void Token_ImplicitReverse_Equal () =>
-            Assert.AreEqual ("test", new Token<string> ("test"));
+            Assert.AreEqual<Token<string>> ("test", new Token<string> ("test"));
 
         [TestMethod]
         public void Token_SamePos_Equal () =>

@@ -12,7 +12,7 @@ namespace TokenizerLibTests {
             Assert.AreEqual ('a'.Into ().Val, 'a');
         [TestMethod]
         public void Val_Char_Equal () =>
-            Assert.AreEqual ('a', 'a'.Into ());
+            Assert.AreEqual<char> ('a', 'a'.Into ());
 
         [TestMethod]
         public void Int_Tok_Equal () =>
@@ -22,7 +22,7 @@ namespace TokenizerLibTests {
             Assert.AreEqual (127.Into ().Val, 127);
         [TestMethod]
         public void Val_Int_Equal () =>
-            Assert.AreEqual (127, 127.Into ());
+            Assert.AreEqual<int> (127, 127.Into ());
 
         [TestMethod]
         public void String_Tok_Equal () =>
@@ -33,6 +33,6 @@ namespace TokenizerLibTests {
 
         [TestMethod]
         public void Val_String_Equal () =>
-            Assert.AreEqual ("test", "test".Into ());
+            Assert.AreEqual<string> ("test", "test".Into ());
     }
 }
